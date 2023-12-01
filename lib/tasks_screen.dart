@@ -114,7 +114,13 @@ class _TasksScreenState extends State<TasksScreen> {
                   //ListView.Builder
                   for (var task in _tasks)
                     ListTile(
-                      title: Text(task.name),
+                      title: Text(
+                          task.name,
+                          style: TextStyle(
+                            decoration:
+                              task.isDone ? TextDecoration.lineThrough : null,
+                          )
+                      ),
                       trailing: Checkbox(
                         value: task.isDone,
                         onChanged: (value) {
